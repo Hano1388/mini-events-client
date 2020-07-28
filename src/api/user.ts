@@ -10,5 +10,12 @@ export const User = {
             },
             body: JSON.stringify(params)
         }).then(res => res.json());
-    }
+    },
+
+    current(): Promise<IUser> {
+        return fetch(`${baseUrl}/users/current`, {
+            credentials: "include",
+            method: "GET"
+        }).then(res => res.json());
+    },
 };

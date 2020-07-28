@@ -1,4 +1,5 @@
 type IEvent = {
+    id: number;
     title: string;
     description: string;
     address: string;
@@ -8,15 +9,14 @@ type IEvent = {
     user_id: number;
 }
 
-type ISession = {
-    email: string;
-    password: string;
-}
-
 type IUser = {
-    first_name: string;
-    last_name: string;
+    id?: number;
+    first_name?: string;
+    last_name?: string;
     email: string;
     address?: string;
-    password: string; 
+    latitude?: number;
+    longitude?: number;
+    password: string;
+    is_admin?: boolean;
 }
