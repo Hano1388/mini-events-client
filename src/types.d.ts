@@ -14,9 +14,9 @@ type IUser = {
     first_name?: string;
     last_name?: string;
     email: string;
-    address?: string;
-    latitude?: number;
-    longitude?: number;
+    address?: string | null;
+    latitude?: number | null;
+    longitude?: number | null;
     password: string;
     is_admin?: boolean;
 }

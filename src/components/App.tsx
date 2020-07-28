@@ -7,9 +7,7 @@ import { WelcomePage } from './pages/WelcomePage';
 import { SignInPage } from './pages/SignInPage';
 import { User } from '../api/user';
 import { Session } from '../api/session';
-
-
-
+import { EventIndexPage } from './pages/EventIndexPage';
 
 const App: React.FC = () => {
   const [currentUser, setCurrentUser] = useState<IUser | null>(null)
@@ -41,9 +39,10 @@ const App: React.FC = () => {
           {...{ currentUser, onSignOut: destroySession }}
         />
       </header>
-      <div className="ui container segment">
+      <div className="ui container">
         <Switch>
           <Route exact path="/" component={WelcomePage} />
+          <Route exact path="/events" component={EventIndexPage} />
           {/* <Route
             path="/sign_in"
             component={SignInPage}
