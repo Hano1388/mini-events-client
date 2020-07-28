@@ -1,0 +1,1 @@
+export const baseUrl = 'https://mini-events.herokuapp.com/api/v1';
