@@ -7,10 +7,11 @@ type IEvent = {
     latitude: number;
     longitude: number;
     user_id: number;
+    created_at?: string;
 }
 
 type IUser = {
-    id?: number;
+    id?: number | string;
     first_name?: string;
     last_name?: string;
     email: string;

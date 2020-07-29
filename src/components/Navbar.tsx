@@ -25,7 +25,11 @@ export const Navbar: React.FC<IProps> = ({ currentUser, onSignOut }) => {
                 {!currentUser && (
                     <>
                         <NavLink exact to="/sign_in" className="item">Sign In</NavLink>
-                        <NavLink exact to="/sign_up" className="item">Sign Up</NavLink>
+                        {/* 
+                            We have user SignUP endpoint but unfortunatelly, haven't had enough 
+                            time to implement it 
+                         */}
+                        {/* <NavLink exact to="/sign_up" className="item">Sign Up</NavLink> */}
                     </>
                 )}
                 {currentUser && (

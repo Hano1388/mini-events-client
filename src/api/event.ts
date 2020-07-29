@@ -9,7 +9,10 @@ export const Event = {
     },
 
     // Fetch a signle event
-    one(id: number): Promise<IEvent> {
+    // Below id: any is a bad practise but, I should also change 
+    // my backend to also accept strings for IDs or uuids
+    // TODO: remove any for id
+    one(id: any): Promise<IEvent> {
         return fetch(`${baseUrl}/events/${id}`, {
             credentials: 'include'
         }).then(res => res.json());

@@ -12,11 +12,14 @@ code {
     monospace;
 }
 
+/* turn this styles into mobile first */
 .EventsMap {
   height: 60vh;
-  width: 60vw;
+  width: 70vw;
 }
 
 .map-wrapper {
   margin-top: 2em;
 }
+
+/* then write a media query for desktop sizes */

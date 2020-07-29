@@ -8,6 +8,8 @@ import { SignInPage } from './pages/SignInPage';
 import { User } from '../api/user';
 import { Session } from '../api/session';
 import { EventIndexPage } from './pages/EventIndexPage';
+import { EventShowPage } from './pages/EventShowPage';
+import { NotFoundPage } from './pages/NotFoundPage'
 
 const App: React.FC = () => {
   const [currentUser, setCurrentUser] = useState<IUser | null>(null)
@@ -42,7 +44,7 @@ const App: React.FC = () => {
       <div className="ui container">
         <Switch>
           <Route exact path="/" component={WelcomePage} />
-          <Route exac path="/events" component={EventIndexPage} />
+          <Route exact path="/events" component={EventIndexPage} />
           {/* 
             Ideally send down the current user as well or create a context for it  
             to use its coordinates for centering the map
@@ -58,6 +60,14 @@ const App: React.FC = () => {
             path="/sign_in"
             component={(routeProps: RouteComponentProps<{}>) => <SignInPage onSignIn={getUser} {...routeProps} />}
           />
+
+          <Route exact path="/events/:id" component={EventShowPage} />
+          <Route exact path="/events/:id" component={EventShowPage} />
+          {/* 
+            A <Route /> component without a "path" prop will render 
+            for all routes. This is primarily inside of a <Switch>
+          */}
+          <Route component={NotFoundPage} />
         </Switch>
       </div>
     </BrowserRouter>
