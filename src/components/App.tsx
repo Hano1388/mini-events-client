@@ -11,6 +11,7 @@ import { EventIndexPage } from './pages/EventIndexPage';
 import { EventShowPage } from './pages/EventShowPage';
 import { NotFoundPage } from './pages/NotFoundPage'
 import { AuthRoute } from './AuthRoute';
+import { SignUpPage } from './pages/SignUpPage';
 
 const App: React.FC = () => {
   const [currentUser, setCurrentUser] = useState<IUser | null>(null)
@@ -18,7 +19,6 @@ const App: React.FC = () => {
   // this prevents useEffect infinite calls
   const getUser = useCallback(() => {
     User.current().then(data => {
-      console.log(data);
       if (typeof data.id !== 'number') {
         setCurrentUser(null);
       } else {
@@ -60,6 +60,12 @@ const App: React.FC = () => {
           <Route
             path="/sign_in"
             component={(routeProps: RouteComponentProps<{}>) => <SignInPage onSignIn={getUser} {...routeProps} />}
+          />
+          <Route
+            path="/sign_up"
+            component={SignUpPage}
+          // We can pass down getuser to SignUpPage like below or using withProps Route attribute
+          // component={(routeProps: RouteComponentProps<{}>) => <SignInPage onSignIn={getUser} {...routeProps} />}
           />
 
           {/* <Route exact path="/events/:id" component={EventShowPage} /> */}

@@ -12,11 +12,10 @@ export const EventShowPage: React.FC<RouteComponentProps<{ id?: string; }>> = ({
 
     useEffect(() => {
         Event.one(eventId).then((event: IEvent) => {
-            console.log(event);
             setEvent(event);
             setIsLoading(false);
         })
-    }, []);
+    }, [eventId]);
 
     if (isLoading) {
         return <h1> Add a Spinner here</h1>

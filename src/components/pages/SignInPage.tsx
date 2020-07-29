@@ -37,7 +37,7 @@ export const SignInPage: React.FC<IProps> = (props) => {
         <div className="SignInPage ui middle aligned center aligned grid">
             <div className="column">
                 <h2 className="ui orange image header">
-                    <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn%3AANd9GcRe3Jm05YG2SaOumkVTnhc-0X-dHZrVwrJSNA&usqp=CAU" className="image" />
+                    <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn%3AANd9GcRe3Jm05YG2SaOumkVTnhc-0X-dHZrVwrJSNA&usqp=CAU" className="image" alt="Sign In"/>
                     <div className="content">
                         Log-in to your account
                         </div>
