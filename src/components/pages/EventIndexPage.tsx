@@ -22,23 +22,26 @@ export const EventIndexPage: React.FC<RouteComponentProps<{}>> = () => {
     }
     return (
         <main className="Page">
-            <div className="segment map-wrapper">
+            <div className="map-wrapper">
                 <EventsMap {...eventIndex} />
             </div>
-            <h2 className="ui horizontal divider header">Events</h2>
-            <ul className="ui list">
-                {(eventIndex.events as Array<IEvent>).map((event: IEvent) => (
-                    <div className="item" key={event.id}>
-                        <i className="map marker icon"></i>
-                        <div className="content">
-                            <Link to={`/events/${event.id}`} className="ui link header" href="">
-                                {event.title}
-                            </Link>
-                            <div className="description">{event.address}</div>
+            <div className="events-list">
+                <h2 className="ui horizontal divider header">Events</h2>
+
+                <div className="ui middle aligned divided list">
+                    {(eventIndex.events as Array<IEvent>).map((event: IEvent) => (
+                        <div className="item" key={event.id}>
+                            <i className="map marker icon"></i>
+                            <div className="content">
+                                <Link to={`/events/${event.id}`} className="ui link header" href="">
+                                    {event.title}
+                                </Link>
+                                <div className="description">{event.address}</div>
+                            </div>
                         </div>
-                    </div>
-                ))}
-            </ul>
+                    ))}
+                </div>
+            </div>
         </main>
     )
 

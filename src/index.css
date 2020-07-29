@@ -1,11 +1,15 @@
+@import url(reset.css);
 body {
   margin: 0;
-  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
+  font-family: -apple-system, BlinkMacSystemFont, 'Thasadith', 'Segoe UI', 'Roboto', 'Oxygen',
     'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
     sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
+  font-size: 100%;
+  min-height: 100vh;
 }
+
 
 code {
   font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
@@ -15,11 +19,50 @@ code {
 /* turn this styles into mobile first */
 .EventsMap {
   height: 60vh;
-  width: 70vw;
+  width: 90vw;
 }
 
 .map-wrapper {
   margin-top: 2em;
+  width: auto;
+  margin: 2em 1em;
+}
+
+.SignInPage.middle.aligned.center {
+  margin-top: 10em;
+}
+
+.content {
+  width: 100%;
+}
+
+.events-list {
+  width: auto;
+  margin: 1em 1em;
+}
+
+/* Desktop or IPad Styles Last */
+@media (min-width: 600px) {
+  /* Write styles for screen size from 600px(IPad) to 900px screen sizes  */
+  .content {
+    width: auto;
+    margin: 0 1em;
+  }
 }
 
 /* then write a media query for desktop sizes */
+@media (min-width: 900px) {
+  .content {
+    width: 80%;
+    margin: 0 10%;
+  }
+  .EventsMap {
+    height: 60vh;
+    width: 70vw;
+  }
+
+  .SignInPage.middle.aligned.center {
+    height: 60vh;
+  }
+  
+}

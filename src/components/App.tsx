@@ -10,6 +10,7 @@ import { Session } from '../api/session';
 import { EventIndexPage } from './pages/EventIndexPage';
 import { EventShowPage } from './pages/EventShowPage';
 import { NotFoundPage } from './pages/NotFoundPage'
+import { AuthRoute } from './AuthRoute';
 
 const App: React.FC = () => {
   const [currentUser, setCurrentUser] = useState<IUser | null>(null)
@@ -41,7 +42,7 @@ const App: React.FC = () => {
           {...{ currentUser, onSignOut: destroySession }}
         />
       </header>
-      <div className="ui container">
+      <section className="content">
         <Switch>
           <Route exact path="/" component={WelcomePage} />
           <Route exact path="/events" component={EventIndexPage} />
@@ -61,15 +62,20 @@ const App: React.FC = () => {
             component={(routeProps: RouteComponentProps<{}>) => <SignInPage onSignIn={getUser} {...routeProps} />}
           />
 
-          <Route exact path="/events/:id" component={EventShowPage} />
-          <Route exact path="/events/:id" component={EventShowPage} />
-          {/* 
-            A <Route /> component without a "path" prop will render 
-            for all routes. This is primarily inside of a <Switch>
-          */}
+          {/* <Route exact path="/events/:id" component={EventShowPage} /> */}
+          {/*  👇 just testing AuthRoute otherwise, we don't have to implement authentication for EventShowPage */}
+          <AuthRoute
+            isAuthenticated={!!currentUser}
+            restrictedPath="/events/:id"
+            authenticationPath="/sign_in"
+            exact={true}
+            path='/events/:id'
+            component={EventShowPage}
+          />
+
           <Route component={NotFoundPage} />
         </Switch>
-      </div>
+      </section>
     </BrowserRouter>
   );
 }

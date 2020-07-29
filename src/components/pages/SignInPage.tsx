@@ -34,32 +34,49 @@ export const SignInPage: React.FC<IProps> = (props) => {
     };
 
     return (
-        <div className="ui clearing segment Page">
-            <h1 className="ui center aligned header">Sign In</h1>
-            <form className="ui large form" onSubmit={createSession}>
-                {errors.length > 0 ? (
-                    <div className="ui negative message">
-                        <div className="header">Failed to Sign In</div>
-                        <p>{errors.map(message => message).join(", ")}</p>
+        <div className="SignInPage ui middle aligned center aligned grid">
+            <div className="column">
+                <h2 className="ui orange image header">
+                    <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn%3AANd9GcRe3Jm05YG2SaOumkVTnhc-0X-dHZrVwrJSNA&usqp=CAU" className="image" />
+                    <div className="content">
+                        Log-in to your account
+                        </div>
+                </h2>
+                <form className="ui large form" onSubmit={createSession}>
+                    {errors.length > 0 ? (
+                        <div className="ui negative message">
+                            <div className="header">Failed to Sign In</div>
+                            <p>{errors.map(message => message).join(", ")}</p>
+                        </div>
+                    ) : (
+                            ""
+                        )}
+                    <div className="ui stacked segment">
+                        <div className="field">
+                            <div className="ui left icon input">
+                                <i className="user icon"></i>
+                                <input type="email" name="email" id="email" placeholder="E-mail address" required />
+                            </div>
+                        </div>
+                        <div className="field">
+                            <div className="ui left icon input">
+                                <i className="lock icon"></i>
+                                <input type="password" name="password" id="password" placeholder="Password" required />
+                            </div>
+                        </div>
+                        <button className="ui fluid large orange submit button">Login</button>
                     </div>
-                ) : (
-                        ""
-                    )}
-                <div className="field">
-                    <label htmlFor="email">Email</label>
-                    <input type="email" name="email" id="email" required />
-                </div>
-                <div className="field">
-                    <label htmlFor="password">Password</label>
-                    <input type="password" name="password" id="password" required />
-                </div>
 
-                <input
-                    className="ui right floated orange button"
-                    type="submit"
-                    value="Sign In"
-                />
-            </form>
+                    <div className="ui error message"></div>
+
+                </form>
+
+                <div className="ui message">
+                    New to us? <a href="/sign_up">Sign Up</a>
+                </div>
+            </div>
         </div>
+
+
     )
 }

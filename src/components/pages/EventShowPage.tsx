@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from 'react';
-import { Link, RouteComponentProps } from 'react-router-dom';
+import { RouteComponentProps } from 'react-router-dom';
 
 import { Event } from '../../api/event';
 
@@ -11,7 +11,7 @@ export const EventShowPage: React.FC<RouteComponentProps<{ id?: string; }>> = ({
     const eventId = match.params.id;
 
     useEffect(() => {
-        Event.one(24).then((event: IEvent) => {
+        Event.one(eventId).then((event: IEvent) => {
             console.log(event);
             setEvent(event);
             setIsLoading(false);

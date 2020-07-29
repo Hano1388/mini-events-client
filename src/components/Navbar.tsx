@@ -34,8 +34,8 @@ export const Navbar: React.FC<IProps> = ({ currentUser, onSignOut }) => {
                 )}
                 {currentUser && (
                     <>
-                        <button className="item" style={{ color: 'red' }} onClick={handleSignOutClick}>Sign Out</button>
-                        <NavLink to="/" style={{ color: 'blue' }} className="item">{currentUser && currentUser.first_name}</NavLink>
+                        <button className="item" style={{ color: 'red', fontWeight: 500 }} onClick={handleSignOutClick}>Sign Out</button>
+                        <NavLink to="#" style={{ color: 'maroon', borderBottomStyle: 'none' }} className="item">{currentUser && currentUser.first_name}</NavLink>
                     </>
                 )}
 
