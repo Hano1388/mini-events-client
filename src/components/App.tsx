@@ -42,11 +42,16 @@ const App: React.FC = () => {
       <div className="ui container">
         <Switch>
           <Route exact path="/" component={WelcomePage} />
-          <Route exact path="/events" component={EventIndexPage} />
+          <Route exac path="/events" component={EventIndexPage} />
+          {/* 
+            Ideally send down the current user as well or create a context for it  
+            to use its coordinates for centering the map
+          */}
           {/* <Route
-            path="/sign_in"
-            component={SignInPage}
-            withProps={{ onSignIn: () => getUser() }}
+            path="/events"
+            exact
+            component={(routeProps: RouteComponentProps<{}>) => <EventIndexPage currentUser={currentUser} {...routeProps} />}
+
           /> */}
 
           <Route

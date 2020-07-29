@@ -11,3 +11,12 @@ code {
   font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
     monospace;
 }
+
+.EventsMap {
+  height: 60vh;
+  width: 60vw;
+}
+
+.map-wrapper {
+  margin-top: 2em;
+}

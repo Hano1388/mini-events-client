@@ -2,13 +2,13 @@ import React, { useState, useEffect } from 'react';
 import { Link, RouteComponentProps } from 'react-router-dom';
 
 import { Event } from '../../api/event';
-
+import { EventsMap } from '../EventsMap';
 interface IEventIndex {
     events: IEvent[] | [];
     isLoading: boolean;
 }
 
-export const EventIndexPage: React.FC<RouteComponentProps<{}>> = (props) => {
+export const EventIndexPage: React.FC<RouteComponentProps<{}>> = () => {
     const [eventIndex, setEventIndex] = useState<IEventIndex>({ events: [], isLoading: true });
 
     useEffect(() => {
@@ -22,6 +22,9 @@ export const EventIndexPage: React.FC<RouteComponentProps<{}>> = (props) => {
     }
     return (
         <main className="Page">
+            <div className="segment map-wrapper">
+                <EventsMap {...eventIndex} />
+            </div>
             <h2 className="ui horizontal divider header">Events</h2>
             <ul className="ui list">
                 {(eventIndex.events as Array<IEvent>).map((event: IEvent) => (

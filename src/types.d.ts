@@ -4,8 +4,8 @@ type IEvent = {
     description: string;
     address: string;
     date: string;
-    latitude?: number;
-    longitude?: number;
+    latitude: number;
+    longitude: number;
     user_id: number;
 }
 
