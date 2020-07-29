@@ -21,6 +21,11 @@ export const Navbar: React.FC<IProps> = ({ currentUser, onSignOut }) => {
             <NavLink exact to="/events" className="item">
                 Events
             </NavLink>
+            {currentUser && (
+                <NavLink exact to="/events/new" className="item">
+                    Add
+                </NavLink>
+            )}
             <div className="right menu">
                 {!currentUser && (
                     <>

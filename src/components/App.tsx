@@ -12,6 +12,7 @@ import { EventShowPage } from './pages/EventShowPage';
 import { NotFoundPage } from './pages/NotFoundPage'
 import { AuthRoute } from './AuthRoute';
 import { SignUpPage } from './pages/SignUpPage';
+import { EventNewPage } from './pages/EventNewPage';
 
 const App: React.FC = () => {
   const [currentUser, setCurrentUser] = useState<IUser | null>(null)
@@ -68,16 +69,15 @@ const App: React.FC = () => {
           // component={(routeProps: RouteComponentProps<{}>) => <SignInPage onSignIn={getUser} {...routeProps} />}
           />
 
-          {/* <Route exact path="/events/:id" component={EventShowPage} /> */}
-          {/*  👇 just testing AuthRoute otherwise, we don't have to implement authentication for EventShowPage */}
           <AuthRoute
             isAuthenticated={!!currentUser}
-            restrictedPath="/events/:id"
-            authenticationPath="/sign_in"
+            redirectPath="/sign_in"
             exact={true}
-            path='/events/:id'
-            component={EventShowPage}
+            path='/events/new'
+            component={EventNewPage}
           />
+
+          <Route exact path="/events/:id" component={EventShowPage} />
 
           <Route component={NotFoundPage} />
         </Switch>

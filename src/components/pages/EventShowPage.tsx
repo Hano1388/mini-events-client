@@ -1,6 +1,7 @@
 import React, { useState, useEffect } from 'react';
 import { RouteComponentProps } from 'react-router-dom';
 
+import { Spinner } from '../Spinner';
 import { Event } from '../../api/event';
 
 
@@ -18,7 +19,7 @@ export const EventShowPage: React.FC<RouteComponentProps<{ id?: string; }>> = ({
     }, [eventId]);
 
     if (isLoading) {
-        return <h1> Add a Spinner here</h1>
+        return <Spinner message="Loading an Event..." />
     }
     return (
         <div className="ui clearing segment">

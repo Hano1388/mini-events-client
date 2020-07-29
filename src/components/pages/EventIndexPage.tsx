@@ -1,6 +1,7 @@
 import React, { useState, useEffect } from 'react';
 import { Link, RouteComponentProps } from 'react-router-dom';
 
+import { Spinner } from '../Spinner';
 import { Event } from '../../api/event';
 import { EventsMap } from '../EventsMap';
 interface IEventIndex {
@@ -18,7 +19,7 @@ export const EventIndexPage: React.FC<RouteComponentProps<{}>> = () => {
     }, [])
 
     if (eventIndex.isLoading) {
-        return <h1>Add a Spinner here</h1>
+        return <Spinner message="Loading Events..." />
     }
     return (
         <main className="Page">

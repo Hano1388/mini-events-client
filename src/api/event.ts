@@ -19,7 +19,7 @@ export const Event = {
     },
 
     // Create an Event 
-    create(params: IEvent): Promise<number | Error> {
+    create(params: INewEvent): Promise<number | Error> {
         return fetch(`${baseUrl}/events`, {
             credentials: 'include',
             method: 'POST',

@@ -1,13 +1,21 @@
 type IEvent = {
-    id: number;
+    id?: number;
     title: string;
     description: string;
-    address: string;
-    date: string;
+    address?: string;
+    date?: string;
     latitude: number;
     longitude: number;
     user_id: number;
     created_at?: string;
+}
+
+type INewEvent = {
+    title: string;
+    description: string;
+    address?: string;
+    date?: string;
+    user_id: number;
 }
 
 type IUser = {
