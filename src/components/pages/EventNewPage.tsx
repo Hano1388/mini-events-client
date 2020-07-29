@@ -1,7 +1,7 @@
-import React, { useState } from 'react';
+import React from 'react';
 
-import { Event } from '../../api/event';
-import { EventForm } from '../EventForm';
+// import { Event } from '../../api/event';
+// import { EventForm } from '../EventForm';
 import { RouteComponentProps } from 'react-router-dom';
 
 interface IProps extends RouteComponentProps<{}> {
@@ -10,8 +10,9 @@ interface IProps extends RouteComponentProps<{}> {
 
 export const EventNewPage: React.FC<RouteComponentProps<{}>> = (props) => {
     console.log(props);
-    const [errors, setError] = useState([]);
+    // const [errors, setError] = useState([]);
 
+    /*
     const createEvent = (event: React.FormEvent<HTMLFormElement>) => {
         event.preventDefault();
         const { currentTarget } = event;
@@ -37,6 +38,7 @@ export const EventNewPage: React.FC<RouteComponentProps<{}>> = (props) => {
 
         currentTarget.reset();
     };
+    */
 
     return (
         <h1>Call EventForm with errors, createEvent, and buttonCaption</h1>

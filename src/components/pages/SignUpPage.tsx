@@ -4,7 +4,7 @@ import { User } from '../../api/user';
 import { RouteComponentProps } from 'react-router-dom';
 
 export const SignUpPage: React.FC<RouteComponentProps> = (props) => {
-    const [errors, setErrors] = useState<Array<string>>([]);
+    const [errors,] = useState<Array<string>>([]);
 
     const handleSubmit = (event: React.FormEvent<HTMLFormElement>): void => {
         event.preventDefault();
